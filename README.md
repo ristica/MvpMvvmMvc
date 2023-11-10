@@ -1,3 +1,3 @@
-# WinForm - MVP with IoC implementation loosely-coupled
+# MVP / MVVM / MVC with IoC implementation loosely-coupled
 
-Set "Demo.StartUp" as your start project => F5 (RUN) !
+Set "Demo.Starter.choose-your-client-technologie" as your start project => F5 (RUN) !
