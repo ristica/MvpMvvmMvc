@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8EDAC39B-7CB6-4CE8-BDF8-F16B762064E4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Demo.Bootstrapper.WinForms</RootNamespace>
+    <AssemblyName>Demo.Bootstrapper.WinForms</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DependencyInitializer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Demo.Common.Contracts\Demo.Common.Contracts.csproj">
+      <Project>{4B3582A8-C988-4472-B45E-8E819480EF5D}</Project>
+      <Name>Demo.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Common\Demo.Common.csproj">
+      <Project>{AF056623-D079-41D6-97D7-81AEC8AD4D58}</Project>
+      <Name>Demo.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Dependencies.Builder\Demo.Dependencies.Builder.csproj">
+      <Project>{854361C8-097F-43AF-8A79-F0480B55F447}</Project>
+      <Name>Demo.Dependencies.Builder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Dependencies.Contracts\Demo.Dependencies.Contracts.csproj">
+      <Project>{CC16D317-4BDE-403B-B4EF-5482C710103D}</Project>
+      <Name>Demo.Dependencies.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Models.Contracts\Demo.Models.Contracts.csproj">
+      <Project>{93C3D108-DEB9-4B96-B9C1-DBB281D3DD95}</Project>
+      <Name>Demo.Models.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Models\Demo.Models.csproj">
+      <Project>{0455AF75-F03C-410F-8C3D-4462A6E0870E}</Project>
+      <Name>Demo.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Presenters.Contracts\Demo.Presenters.Contracts.csproj">
+      <Project>{2933D51A-2ACD-436B-A9F5-4532C37EE083}</Project>
+      <Name>Demo.Presenters.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Presenters\Demo.Presenters.csproj">
+      <Project>{7644D273-9746-4A42-ABCA-10326F277406}</Project>
+      <Name>Demo.Presenters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Repository.Contracts\Demo.Repository.Contracts.csproj">
+      <Project>{763731E5-4572-42CD-A9B6-D38C2BCDC6E5}</Project>
+      <Name>Demo.Repository.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Repository\Demo.Repository.csproj">
+      <Project>{B4B7CD7F-B3EB-48BB-B8BC-6A6BBC4AE2BF}</Project>
+      <Name>Demo.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Services.Contracts\Demo.Services.Contracts.csproj">
+      <Project>{FB47772E-44F7-422B-AB68-92E3D23A2CA6}</Project>
+      <Name>Demo.Services.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Services\Demo.Services.csproj">
+      <Project>{7EE933B7-852E-4B3B-AA3B-2AE735882A70}</Project>
+      <Name>Demo.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Views.Contracts\Demo.Views.Contracts.csproj">
+      <Project>{9B1D6967-A151-4425-8B9C-354438846DE3}</Project>
+      <Name>Demo.Views.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Views\Demo.Views.csproj">
+      <Project>{2640B70C-E909-4175-8E4C-4C7CD72EB6C9}</Project>
+      <Name>Demo.Views</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Wpf.Presentation.Shared\Demo.Wpf.Presentation.Shared.csproj">
+      <Project>{6e2f8fa8-dd22-40e5-901a-dd9617f222ae}</Project>
+      <Name>Demo.Wpf.Presentation.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

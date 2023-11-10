@@ -1,0 +1,25 @@
+﻿<base:BaseWindow x:Class="Demo.Wpf.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo.Wpf"
+        xmlns:base="clr-namespace:Demo.Wpf.Views.Base"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBlock TextWrapping="Wrap"
+                   Text="Hello World"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="22" />
+        <Button Content="Help"
+                HorizontalAlignment="Left"
+                Height="35"
+                Margin="730,24,0,0"
+                VerticalAlignment="Top"
+                Width="40" 
+                Command="{Binding HelpCommand}"/>
+
+    </Grid>
+</base:BaseWindow>

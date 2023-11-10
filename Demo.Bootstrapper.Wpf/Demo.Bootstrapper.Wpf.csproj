@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{81D44436-6404-4503-BA18-BDC4EB0A7A60}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Demo.Bootstrapper.Wpf</RootNamespace>
+    <AssemblyName>Demo.Bootstrapper.Wpf</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DependencyInitializer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Demo.Common.Contracts\Demo.Common.Contracts.csproj">
+      <Project>{4B3582A8-C988-4472-B45E-8E819480EF5D}</Project>
+      <Name>Demo.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Common\Demo.Common.csproj">
+      <Project>{AF056623-D079-41D6-97D7-81AEC8AD4D58}</Project>
+      <Name>Demo.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Dependencies.Contracts\Demo.Dependencies.Contracts.csproj">
+      <Project>{CC16D317-4BDE-403B-B4EF-5482C710103D}</Project>
+      <Name>Demo.Dependencies.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Models.Contracts\Demo.Models.Contracts.csproj">
+      <Project>{93C3D108-DEB9-4B96-B9C1-DBB281D3DD95}</Project>
+      <Name>Demo.Models.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Models\Demo.Models.csproj">
+      <Project>{0455AF75-F03C-410F-8C3D-4462A6E0870E}</Project>
+      <Name>Demo.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Repository.Contracts\Demo.Repository.Contracts.csproj">
+      <Project>{763731E5-4572-42CD-A9B6-D38C2BCDC6E5}</Project>
+      <Name>Demo.Repository.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Repository\Demo.Repository.csproj">
+      <Project>{B4B7CD7F-B3EB-48BB-B8BC-6A6BBC4AE2BF}</Project>
+      <Name>Demo.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Services.Contracts\Demo.Services.Contracts.csproj">
+      <Project>{FB47772E-44F7-422B-AB68-92E3D23A2CA6}</Project>
+      <Name>Demo.Services.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Services\Demo.Services.csproj">
+      <Project>{7EE933B7-852E-4B3B-AA3B-2AE735882A70}</Project>
+      <Name>Demo.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Wpf.Presentation.Shared\Demo.Wpf.Presentation.Shared.csproj">
+      <Project>{6e2f8fa8-dd22-40e5-901a-dd9617f222ae}</Project>
+      <Name>Demo.Wpf.Presentation.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Wpf.ViewModels.Contracts\Demo.Wpf.ViewModels.Contracts.csproj">
+      <Project>{C44F73BF-2DAE-4CB9-B47C-C0A05B10F1BC}</Project>
+      <Name>Demo.Wpf.ViewModels.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Wpf.ViewModels\Demo.Wpf.ViewModels.csproj">
+      <Project>{2C3EE47E-8C2D-45C2-B3CE-51AF01F81508}</Project>
+      <Name>Demo.Wpf.ViewModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Wpf.Views.Contracts\Demo.Wpf.Views.Contracts.csproj">
+      <Project>{7E54C73D-F80D-4084-ACAB-B6270D5315CE}</Project>
+      <Name>Demo.Wpf.Views.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Wpf.Views\Demo.Wpf.Views.csproj">
+      <Project>{ECFE9CB7-2C37-4240-85EE-0378D4E27826}</Project>
+      <Name>Demo.Wpf.Views</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
