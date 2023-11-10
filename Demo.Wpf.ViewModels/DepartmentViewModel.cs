@@ -3,6 +3,7 @@ using Demo.Wpf.ViewModels.Base;
 using Demo.Wpf.ViewModels.Contracts;
 using Demo.Wpf.Views.Contracts;
 using Demo.Wpf.Views.Contracts.Base;
+using Demo.Wpf.Views.Contracts.UserControls;
 
 namespace Demo.Wpf.ViewModels
 {

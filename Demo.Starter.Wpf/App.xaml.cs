@@ -7,7 +7,7 @@ namespace Demo.Starter.Wpf
 {
     public partial class App : Application
     {
-        protected override void OnStartup(StartupEventArgs e)
+        protected override void OnStartup(StartupEventArgs e) 
         {
             DependencyInitializer.Initialize(DependencyContainerFactory.Init());
             DependencyContainerFactory.Container.Resolve<IMainViewModel>().GetWindow().ShowMe();

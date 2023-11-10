@@ -13,6 +13,8 @@ using Demo.Wpf.ViewModels;
 using Demo.Wpf.ViewModels.Contracts;
 using Demo.Wpf.Views;
 using Demo.Wpf.Views.Contracts;
+using Demo.Wpf.Views.Contracts.UserControls;
+using Demo.Wpf.Views.UserControls;
 
 namespace Demo.Bootstrapper.Wpf
 {
@@ -57,8 +59,10 @@ namespace Demo.Bootstrapper.Wpf
         {
             container.RegisterType<IMainWindow, MainWindow>();
             container.RegisterType<IHelpWindow, HelpWindow>();
-            container.RegisterType<ICustomerView, CustomerView>();
-            container.RegisterType<IDepartmentView, DepartmentView>();
+            container.RegisterType<ICustomerView, CustomerUC>();
+            container.RegisterType<IDepartmentView, DepartmentUC>();
+            container.RegisterType<ICustomerRowView, CustomerRowUC>();
+            container.RegisterType<IDepartmentRowView, DepartmentRowUC>();
         }
 
         private static void RegisterServices(IDependencyContainer container)

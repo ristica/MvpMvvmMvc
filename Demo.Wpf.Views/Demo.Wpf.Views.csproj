@@ -42,8 +42,6 @@
   <ItemGroup>
     <Compile Include="Base\BaseView.cs" />
     <Compile Include="Base\BaseWindow.cs" />
-    <Compile Include="CustomerView.cs" />
-    <Compile Include="DepartmentView.cs" />
     <Compile Include="HelpWindow.xaml.cs">
       <DependentUpon>HelpWindow.xaml</DependentUpon>
     </Compile>
@@ -51,6 +49,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\CustomerRowUC.xaml.cs">
+      <DependentUpon>CustomerRowUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CustomerUC.xaml.cs">
+      <DependentUpon>CustomerUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DepartmentRowUC.xaml.cs">
+      <DependentUpon>DepartmentRowUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DepartmentUC.xaml.cs">
+      <DependentUpon>DepartmentUC.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Demo.Wpf.Presentation.Shared\Demo.Wpf.Presentation.Shared.csproj">
@@ -75,6 +85,28 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="UserControls\CustomerRowUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CustomerUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\DepartmentRowUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\DepartmentUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\help.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

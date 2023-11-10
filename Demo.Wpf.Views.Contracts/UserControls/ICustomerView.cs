@@ -1,6 +1,6 @@
 ﻿using Demo.Wpf.Views.Contracts.Base;
 
-namespace Demo.Wpf.Views.Contracts
+namespace Demo.Wpf.Views.Contracts.UserControls
 {
     public interface ICustomerView : IBaseView
     {

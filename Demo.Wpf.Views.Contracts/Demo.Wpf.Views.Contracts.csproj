@@ -37,8 +37,10 @@
   <ItemGroup>
     <Compile Include="Base\IBaseView.cs" />
     <Compile Include="Base\IBaseWindow.cs" />
-    <Compile Include="ICustomerView.cs" />
-    <Compile Include="IDepartmentView.cs" />
+    <Compile Include="UserControls\ICustomerRowView.cs" />
+    <Compile Include="UserControls\ICustomerView.cs" />
+    <Compile Include="UserControls\IDepartmentRowView.cs" />
+    <Compile Include="UserControls\IDepartmentView.cs" />
     <Compile Include="IHelpWindow.cs" />
     <Compile Include="IMainWindow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
