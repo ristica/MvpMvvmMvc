@@ -70,12 +70,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="Views\Customer\Index.cshtml" />
-    <Content Include="Views\Department\Index.cshtml" />
-    <Content Include="Views\Customer\Delete.cshtml" />
-    <Content Include="Views\Customer\List.cshtml" />
-    <Content Include="Views\Department\Delete.cshtml" />
-    <Content Include="Views\Department\List.cshtml" />
+    <EmbeddedResource Include="Views\Customer\Index.cshtml" />
+    <EmbeddedResource Include="Views\Department\Index.cshtml" />
+    <EmbeddedResource Include="Views\Customer\Delete.cshtml" />
+    <EmbeddedResource Include="Views\Customer\List.cshtml" />
+    <EmbeddedResource Include="Views\Department\Delete.cshtml" />
+    <EmbeddedResource Include="Views\Department\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Demo.Asp.Presenter.Contracts\Demo.Asp.Presenter.Contracts.csproj">
