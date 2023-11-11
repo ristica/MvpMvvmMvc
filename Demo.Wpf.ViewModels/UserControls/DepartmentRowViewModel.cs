@@ -8,13 +8,25 @@ namespace Demo.Wpf.ViewModels.UserControls
 {
     public class DepartmentRowViewModel : BaseViewModel, IDepartmentRowViewModel
     {
+        #region FIELDS
+
         private readonly IDepartmentRowView _view;
+
+        #endregion
+
+        #region C-TOR
 
         public DepartmentRowViewModel(IDependencyContainer dependencyContainer) : base(dependencyContainer)
         {
             this._view = dependencyContainer.Resolve<IDepartmentRowView>();
         }
 
+        #endregion
+
+        #region METHODS
+
         public IBaseView GetView() => this._view;
+
+        #endregion
     }
 }

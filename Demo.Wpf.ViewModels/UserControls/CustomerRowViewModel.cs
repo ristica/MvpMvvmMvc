@@ -14,10 +14,16 @@ namespace Demo.Wpf.ViewModels.UserControls
 {
     public class CustomerRowViewModel : BaseViewModel, ICustomerRowViewModel
     {
+        #region FIELDS
+
         private readonly ICustomerRowView _view;
         private readonly ICustomerService<ICustomerModel> _service;
         private readonly IMessageNotificationsHelper _messageNotificationsHelper;
         private ICustomerModel _customer;
+
+        #endregion
+
+        #region PROPERTIES
 
         public ICustomerModel Customer
         {
@@ -29,7 +35,15 @@ namespace Demo.Wpf.ViewModels.UserControls
             }
         }
 
+        #endregion
+
+        #region COMMANDS
+
         public ICommand DeleteCustomerCommand { get; private set; }
+
+        #endregion
+
+        #region C-TOR
 
         public CustomerRowViewModel(IDependencyContainer dependencyContainer) : base(dependencyContainer)
         {
@@ -40,12 +54,20 @@ namespace Demo.Wpf.ViewModels.UserControls
             this.RegisterCommands();
         }
 
+        #endregion
+
+        #region METHODS
+
         public IBaseView GetView() => this._view;
 
         public void PropagateDataContext()
         {
             this._view.SetDataContext(this);
         }
+
+        #endregion
+
+        #region HELPERS
 
         private void RegisterCommands()
         {
@@ -65,5 +87,7 @@ namespace Demo.Wpf.ViewModels.UserControls
         }
 
         private bool CanExecuteDeleteCustomerCommand(object arg) => true;
+
+        #endregion
     }
 }

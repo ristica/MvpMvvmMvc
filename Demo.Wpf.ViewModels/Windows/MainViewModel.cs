@@ -6,6 +6,7 @@ using Demo.Common.Shared;
 using Demo.Dependencies.Contracts;
 using Demo.Wpf.ViewModels.Base;
 using Demo.Wpf.ViewModels.Commands;
+using Demo.Wpf.ViewModels.Contracts.Base;
 using Demo.Wpf.ViewModels.Contracts.UserControls;
 using Demo.Wpf.ViewModels.Contracts.Windows;
 using Demo.Wpf.Views.Contracts.Base;
@@ -98,14 +99,17 @@ namespace Demo.Wpf.ViewModels.Windows
 
         private void ExecuteLoadCustomersCommand(object obj)
         {
-            var customerViewModel = DependencyContainer.Resolve<ICustomerViewModel>();
-
-            this._window.GetContentPanel().Child = customerViewModel.GetView() as UIElement;
+            this.LoadCurrentData(DependencyContainer.Resolve<ICustomerViewModel>());
         }
 
         private void ExecuteLoadDepartmentsCommand(object obj)
         {
-            
+            this.LoadCurrentData(DependencyContainer.Resolve<IDepartmentViewModel>());
+        }
+
+        private void LoadCurrentData(IBaseViewModelForView vm)
+        {
+            this._window.GetContentPanel().Child = vm.GetView() as UIElement;
         }
 
         #endregion
