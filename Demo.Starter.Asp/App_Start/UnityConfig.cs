@@ -1,8 +1,6 @@
 using System.Web.Mvc;
 using Demo.Bootstrapper.Asp;
 using Demo.Dependencies.Builder;
-using Unity;
-using Unity.Mvc5;
 
 namespace Demo.Starter.Asp
 {

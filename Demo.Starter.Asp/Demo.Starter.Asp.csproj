@@ -58,15 +58,8 @@
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.ApplicationServices" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
@@ -88,13 +81,8 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Web.Services" />
-    <Reference Include="System.EnterpriseServices" />
     <Reference Include="Unity.Abstractions, Version=5.11.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.5.11.10\lib\net47\Unity.Abstractions.dll</HintPath>
     </Reference>
@@ -159,18 +147,11 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Demo.Asp.Common\Demo.Asp.Common.csproj">
       <Project>{0F0261A4-473F-48A3-9A0A-E57770A61B1E}</Project>
       <Name>Demo.Asp.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Demo.Asp.Presenter.Contracts\Demo.Asp.Presenter.Contracts.csproj">
-      <Project>{C33A9BC9-7597-4C82-824B-5BA8BFD6298B}</Project>
-      <Name>Demo.Asp.Presenter.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\Demo.Asp.UI\Demo.Asp.UI.csproj">
       <Project>{4412CECB-C331-4BBB-9D3A-6F19F4EC759C}</Project>
@@ -187,10 +168,6 @@
     <ProjectReference Include="..\Demo.Dependencies.Contracts\Demo.Dependencies.Contracts.csproj">
       <Project>{CC16D317-4BDE-403B-B4EF-5482C710103D}</Project>
       <Name>Demo.Dependencies.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Demo.Models.Contracts\Demo.Models.Contracts.csproj">
-      <Project>{93C3D108-DEB9-4B96-B9C1-DBB281D3DD95}</Project>
-      <Name>Demo.Models.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

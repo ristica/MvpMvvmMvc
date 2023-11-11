@@ -33,12 +33,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BasePresenter.cs" />
@@ -58,10 +52,6 @@
     <ProjectReference Include="..\Demo.Models.Contracts\Demo.Models.Contracts.csproj">
       <Project>{93C3D108-DEB9-4B96-B9C1-DBB281D3DD95}</Project>
       <Name>Demo.Models.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Demo.Presenters.Contracts\Demo.Presenters.Contracts.csproj">
-      <Project>{2933D51A-2ACD-436B-A9F5-4532C37EE083}</Project>
-      <Name>Demo.Presenters.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\Demo.Services.Contracts\Demo.Services.Contracts.csproj">
       <Project>{FB47772E-44F7-422B-AB68-92E3D23A2CA6}</Project>
