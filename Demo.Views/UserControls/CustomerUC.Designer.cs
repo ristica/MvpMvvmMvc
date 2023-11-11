@@ -37,6 +37,7 @@
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.Enabled = false;
             this.btnAdd.Location = new System.Drawing.Point(646, 370);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 3, 0, 0);
             this.btnAdd.Name = "btnAdd";
