@@ -69,7 +69,7 @@ namespace Demo.Wpf.ViewModels.UserControls
 
         #region HELPERS
 
-        private void RegisterCommands()
+        private void RegisterCommands() 
         {
             this.DeleteCustomerCommand =
                 new DelegateCommand(ExecuteDeleteCustomerCommand, CanExecuteDeleteCustomerCommand);
