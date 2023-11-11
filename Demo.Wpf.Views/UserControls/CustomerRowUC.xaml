@@ -17,10 +17,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <!-- DISTANCE COLUMN START-->
                 <ColumnDefinition Width="*" />
-                <!-- DISTANCE COLUMN END-->
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
@@ -53,7 +50,7 @@
             </StackPanel>
 
             <Button Grid.Row="0"
-                    Grid.Column="2"
+                    Grid.Column="1"
                     Padding="10,4"
                     Content="Details"
                     VerticalAlignment="Center"
@@ -61,14 +58,15 @@
                     Margin="2,0,0,0"
                     Click="BtnDetailsOnClicked"></Button>
             <Button Grid.Row="0"
-                    Grid.Column="3"
+                    Grid.Column="2"
                     Padding="10,4"
                     Content="Edit"
                     VerticalAlignment="Center"
                     MinWidth="60"
-                    Margin="2,0"></Button>
+                    Margin="2,0"
+                    IsEnabled="False" />
             <Button Grid.Row="0"
-                    Grid.Column="4"
+                    Grid.Column="3"
                     Padding="10,4"
                     Content="Delete"
                     VerticalAlignment="Center"

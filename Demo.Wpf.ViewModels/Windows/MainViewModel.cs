@@ -42,6 +42,9 @@ namespace Demo.Wpf.ViewModels.Windows
             this.SubscribeToNotifications();
             this.RegisterCommands();
             this._window.SetDataContext(this);
+
+            // load customers on start
+            this.LoadCustomersCommand.Execute(null);
         }
 
         #endregion
@@ -57,12 +60,16 @@ namespace Demo.Wpf.ViewModels.Windows
                 case MessageType.CustomerDeletedMessage:
                     this.LoadCustomersCommand.Execute(null);
                     break;
+                case MessageType.DepartmentDeletedMessage:
+                    this.LoadDepartmentsCommand.Execute(null);
+                    break;
             }
         }
 
         public void Dispose()
         {
             this._messageNotificationsHelper.Unsubscribe(this, (int)MessageType.CustomerDeletedMessage);
+            this._messageNotificationsHelper.Unsubscribe(this, (int)MessageType.DepartmentDeletedMessage);
         }
 
         #endregion
@@ -72,6 +79,7 @@ namespace Demo.Wpf.ViewModels.Windows
         private void SubscribeToNotifications()
         {
             this._messageNotificationsHelper.Subscribe(this, (int)MessageType.CustomerDeletedMessage);
+            this._messageNotificationsHelper.Subscribe(this, (int)MessageType.DepartmentDeletedMessage);
         }
 
         private void RegisterCommands()

@@ -5,5 +5,6 @@
         ResizeMainWindowMessage = 1,
         CustomerDeletedMessage = 2,
         CustomerUpdatedMessage = 3,
+        DepartmentDeletedMessage = 4
     }
 }

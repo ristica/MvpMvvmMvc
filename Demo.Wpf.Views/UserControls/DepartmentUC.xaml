@@ -33,7 +33,8 @@
                 VerticalAlignment="Bottom"
                 Margin="0,10,0,0"
                 Content="Add new department"
-                Padding="20,5" />
+                Padding="20,5" 
+                IsEnabled="False" />
 
     </Grid>
 </UserControl>

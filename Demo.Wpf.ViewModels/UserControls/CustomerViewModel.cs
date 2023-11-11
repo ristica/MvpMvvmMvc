@@ -15,7 +15,6 @@ namespace Demo.Wpf.ViewModels.UserControls
 
         private readonly ICustomerView _view;
         private readonly ICustomerService<ICustomerModel> _service;
-       
 
         #endregion
 
