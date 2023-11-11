@@ -1,22 +1,26 @@
-﻿using System;
-using System.Windows.Controls;
+﻿using System.Windows;
 using Demo.Wpf.Views.Contracts.UserControls;
 
 namespace Demo.Wpf.Views.UserControls
 {
-    /// <summary>
-    /// Interaction logic for CustomerRowUC.xaml
-    /// </summary>
-    public partial class CustomerRowUC : UserControl, ICustomerRowView
+    // ReSharper disable once InconsistentNaming
+    public partial class CustomerRowUC : ICustomerRowView
     {
         public CustomerRowUC()
         {
             InitializeComponent();
         }
 
-        public void SetDataContext<T>(T viewModel)
+        public void SetDataContext<T>(T dc)
         {
-            throw new NotImplementedException();
+            this.DataContext = dc;
+            this.BtnDetailsOnClicked(null, null);
+        }
+
+        private void BtnDetailsOnClicked(object sender, System.Windows.RoutedEventArgs e)
+        {
+            this.DetailsStackPanel.Visibility = this.DetailsStackPanel.Visibility == Visibility.Collapsed
+                ? Visibility.Visible : Visibility.Collapsed;
         }
     }
 }

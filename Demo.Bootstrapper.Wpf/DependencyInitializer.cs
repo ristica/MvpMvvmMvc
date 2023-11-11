@@ -8,13 +8,17 @@ using Demo.Models.DepartmentDomain;
 using Demo.Repository;
 using Demo.Repository.Contracts;
 using Demo.Services;
+using Demo.Services.Common;
 using Demo.Services.Contracts;
-using Demo.Wpf.ViewModels;
-using Demo.Wpf.ViewModels.Contracts;
-using Demo.Wpf.Views;
-using Demo.Wpf.Views.Contracts;
+using Demo.Services.Contracts.Common;
+using Demo.Wpf.ViewModels.Contracts.UserControls;
+using Demo.Wpf.ViewModels.Contracts.Windows;
+using Demo.Wpf.ViewModels.UserControls;
+using Demo.Wpf.ViewModels.Windows;
 using Demo.Wpf.Views.Contracts.UserControls;
+using Demo.Wpf.Views.Contracts.Windows;
 using Demo.Wpf.Views.UserControls;
+using Demo.Wpf.Views.Windows;
 
 namespace Demo.Bootstrapper.Wpf
 {
@@ -41,6 +45,8 @@ namespace Demo.Bootstrapper.Wpf
             container.RegisterType<IHelpViewModel, HelpViewModel>();
             container.RegisterType<ICustomerViewModel, CustomerViewModel>();
             container.RegisterType<IDepartmentViewModel, DepartmentViewModel>();
+            container.RegisterType<IDepartmentRowViewModel, DepartmentRowViewModel>();
+            container.RegisterType<ICustomerRowViewModel, CustomerRowViewModel>();
         }
 
         private static void RegisterRepositories(IDependencyContainer container)
@@ -69,6 +75,8 @@ namespace Demo.Bootstrapper.Wpf
         {
             container.RegisterType(typeof(ICustomerService<>), typeof(CustomerService<>));
             container.RegisterType(typeof(IDepartmentService<>), typeof(DepartmentService<>));
+
+            container.RegisterType<IModelDataAnnotationValidator, ModelDataAnnotationValidator>();
         }
     }
 }

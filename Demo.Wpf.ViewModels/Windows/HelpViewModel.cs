@@ -4,20 +4,24 @@ using System.Windows.Input;
 using Demo.Dependencies.Contracts;
 using Demo.Wpf.ViewModels.Base;
 using Demo.Wpf.ViewModels.Commands;
-using Demo.Wpf.ViewModels.Contracts;
-using Demo.Wpf.Views.Contracts;
+using Demo.Wpf.ViewModels.Contracts.Windows;
 using Demo.Wpf.Views.Contracts.Base;
+using Demo.Wpf.Views.Contracts.Windows;
 
-namespace Demo.Wpf.ViewModels
+namespace Demo.Wpf.ViewModels.Windows
 {
     public class HelpViewModel : BaseViewModel, IHelpViewModel
     {
+        #region FIELDS
+
         private readonly IHelpWindow _window;
         private string _windowTitle;
         private string _product;
         private string _version;
         private string _copyright;
         private string _description;
+
+        #endregion
 
         #region PROPERTIES
 
@@ -73,7 +77,13 @@ namespace Demo.Wpf.ViewModels
 
         #endregion
 
-        public ICommand CloseCommand { get; set; }
+        #region COMMANDS
+
+        public ICommand CloseCommand { get; private set; }
+
+        #endregion
+
+        #region C-TRO´R
 
         public HelpViewModel(IDependencyContainer dependencyContainer) : base(dependencyContainer)
         {
@@ -83,9 +93,22 @@ namespace Demo.Wpf.ViewModels
             this.SetDataContext();
         }
 
+        #endregion
+
+        #region METHODS
+
         public IBaseWindow GetWindow() => this._window;
 
-        protected sealed override void SetDataContext()
+        #endregion
+
+        #region HELPERS
+
+        private void RegisterCommands()
+        {
+            this.CloseCommand = new DelegateCommand(ExecuteCloseCommand, CanExecuteCloseCommand);
+        }
+
+        private void SetDataContext()
         {
             this.WindowTitle = GetAssemblyTitle();
             this.Description = GetAssemblyDescription();
@@ -94,11 +117,6 @@ namespace Demo.Wpf.ViewModels
             this.Copyright = GetAssemblyCopyright();
 
             this._window.SetDataContext(this);
-        }
-
-        private void RegisterCommands()
-        {
-            this.CloseCommand = new DelegateCommand(ExecuteCloseCommand, CanExecuteCloseCommand);
         }
 
         private void ExecuteCloseCommand(object obj)
@@ -148,5 +166,7 @@ namespace Demo.Wpf.ViewModels
 
             return attribute.Title;
         }
+
+        #endregion
     }
 }

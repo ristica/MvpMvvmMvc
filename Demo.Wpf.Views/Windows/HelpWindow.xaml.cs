@@ -1,14 +1,14 @@
 ﻿using Demo.Wpf.Views.Base;
-using Demo.Wpf.Views.Contracts;
+using Demo.Wpf.Views.Contracts.Windows;
 
-namespace Demo.Wpf.Views
+namespace Demo.Wpf.Views.Windows
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : BaseWindow, IMainWindow
+    public partial class HelpWindow : BaseWindow, IHelpWindow
     {
-        public MainWindow()
+        public HelpWindow()
         {
             InitializeComponent();
         }

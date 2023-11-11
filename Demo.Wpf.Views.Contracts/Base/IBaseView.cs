@@ -2,6 +2,6 @@
 {
     public interface IBaseView
     {
-        void SetDataContext<T>(T viewModel);
+        void SetDataContext<T>(T dataContext);
     }
 }

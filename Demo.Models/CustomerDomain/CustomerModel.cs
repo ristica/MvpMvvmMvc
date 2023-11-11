@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Dynamic;
-using Demo.Models.Contracts.CustomerDomain;
+﻿using Demo.Models.Contracts.CustomerDomain;
 using Demo.Models.CustomerDomain.Memento;
 using Demo.Models.Shared;
 using Demo.Wpf.Presentation.Shared;

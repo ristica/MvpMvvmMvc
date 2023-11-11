@@ -1,14 +1,15 @@
-﻿using Demo.Wpf.Views.Base;
-using Demo.Wpf.Views.Contracts;
+﻿using System.Windows.Controls;
+using Demo.Wpf.Views.Base;
+using Demo.Wpf.Views.Contracts.Windows;
 
-namespace Demo.Wpf.Views
+namespace Demo.Wpf.Views.Windows
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class HelpWindow : BaseWindow, IHelpWindow
+    public partial class MainWindow : BaseWindow, IMainWindow
     {
-        public HelpWindow()
+        public MainWindow()
         {
             InitializeComponent();
         }
@@ -31,6 +32,11 @@ namespace Demo.Wpf.Views
         public void SetDataContext<IBaseViewModelForWindow>(IBaseViewModelForWindow viewModel)
         {
             this.DataContext = viewModel;
+        }
+
+        public Border GetContentPanel()
+        {
+            return this.PanelControl;
         }
     }
 }

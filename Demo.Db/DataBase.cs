@@ -311,11 +311,11 @@ namespace Demo.Db
             this._departments.Add(new DepartmentModel { Id = 6, Name = "Department 6" });
             this._departments.Add(new DepartmentModel { Id = 7, Name = "Department 7" });
             this._departments.Add(new DepartmentModel { Id = 8, Name = "Department 8" });
-            //this._departments.Add(new DepartmentModel { Id = 9, Name = "Department 9" });
-            //this._departments.Add(new DepartmentModel { Id = 10, Name = "Department 10" });
-            //this._departments.Add(new DepartmentModel { Id = 11, Name = "Department 11" });
-            //this._departments.Add(new DepartmentModel { Id = 12, Name = "Department 12" });
-            //this._departments.Add(new DepartmentModel { Id = 13, Name = "Department 13" });
+            this._departments.Add(new DepartmentModel { Id = 9, Name = "Department 9" });
+            this._departments.Add(new DepartmentModel { Id = 10, Name = "Department 10" });
+            this._departments.Add(new DepartmentModel { Id = 11, Name = "Department 11" });
+            this._departments.Add(new DepartmentModel { Id = 12, Name = "Department 12" });
+            this._departments.Add(new DepartmentModel { Id = 13, Name = "Department 13" });
         }
 
         #endregion

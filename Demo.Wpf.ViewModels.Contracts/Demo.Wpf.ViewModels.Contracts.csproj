@@ -39,17 +39,24 @@
   <ItemGroup>
     <Compile Include="Base\IBaseViewModelForView.cs" />
     <Compile Include="Base\IBaseViewModelForWindow.cs" />
-    <Compile Include="ICustomerViewModel.cs" />
-    <Compile Include="IDepartmentViewModel.cs" />
-    <Compile Include="IHelpViewModel.cs" />
-    <Compile Include="IMainViewModel.cs" />
+    <Compile Include="UserControls\ICustomerViewModel.cs" />
+    <Compile Include="UserControls\IDepartmentViewModel.cs" />
+    <Compile Include="Windows\IHelpViewModel.cs" />
+    <Compile Include="Windows\IMainViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\ICustomerRowViewModel.cs" />
+    <Compile Include="UserControls\IDepartmentRowViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Demo.Models.Contracts\Demo.Models.Contracts.csproj">
+      <Project>{93C3D108-DEB9-4B96-B9C1-DBB281D3DD95}</Project>
+      <Name>Demo.Models.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Demo.Wpf.Views.Contracts\Demo.Wpf.Views.Contracts.csproj">
       <Project>{7E54C73D-F80D-4084-ACAB-B6270D5315CE}</Project>
       <Name>Demo.Wpf.Views.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

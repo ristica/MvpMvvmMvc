@@ -1,16 +1,9 @@
-﻿using System;
-using System.Windows.Controls;
-using Demo.Wpf.Views.Contracts.UserControls;
+﻿using Demo.Wpf.Views.Contracts.UserControls;
 
 namespace Demo.Wpf.Views.UserControls
 {
-    /// <summary>
-    /// Interaction logic for DepartmentRowUC.xaml
-    /// </summary>
-    public partial class DepartmentRowUC : UserControl, IDepartmentRowView
+    public partial class DepartmentRowUC : IDepartmentRowView
     {
-        private IDepartmentRowView _departmentRowViewImplementation;
-
         public DepartmentRowUC()
         {
             InitializeComponent();
@@ -18,7 +11,7 @@ namespace Demo.Wpf.Views.UserControls
 
         public void SetDataContext<T>(T viewModel)
         {
-            throw new NotImplementedException();
+            this.DataContext = viewModel;
         }
     }
 }

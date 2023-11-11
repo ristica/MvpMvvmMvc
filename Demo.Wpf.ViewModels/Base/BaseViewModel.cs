@@ -11,7 +11,5 @@ namespace Demo.Wpf.ViewModels.Base
         {
             this.DependencyContainer = dependencyContainer;
         }
-
-        protected abstract void SetDataContext();
     }
 }

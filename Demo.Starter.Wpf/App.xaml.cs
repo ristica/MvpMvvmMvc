@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using Demo.Bootstrapper.Wpf;
 using Demo.Dependencies.Builder;
-using Demo.Wpf.ViewModels.Contracts;
+using Demo.Wpf.ViewModels.Contracts.Windows;
 
 namespace Demo.Starter.Wpf
 {

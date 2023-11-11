@@ -34,16 +34,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BaseViewModel.cs" />
     <Compile Include="Commands\DelegateCommand.cs" />
-    <Compile Include="CustomerViewModel.cs" />
-    <Compile Include="DepartmentViewModel.cs" />
-    <Compile Include="HelpViewModel.cs" />
-    <Compile Include="MainViewModel.cs" />
+    <Compile Include="UserControls\CustomerRowViewModel.cs" />
+    <Compile Include="UserControls\CustomerViewModel.cs" />
+    <Compile Include="UserControls\DepartmentRowViewModel.cs" />
+    <Compile Include="UserControls\DepartmentViewModel.cs" />
+    <Compile Include="Windows\HelpViewModel.cs" />
+    <Compile Include="Windows\MainViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -51,9 +55,21 @@
       <Project>{4B3582A8-C988-4472-B45E-8E819480EF5D}</Project>
       <Name>Demo.Common.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Demo.Common.Shared\Demo.Common.Shared.csproj">
+      <Project>{A5345B1B-130E-4AE9-BA0B-6E2D8B1EB483}</Project>
+      <Name>Demo.Common.Shared</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Demo.Dependencies.Contracts\Demo.Dependencies.Contracts.csproj">
       <Project>{CC16D317-4BDE-403B-B4EF-5482C710103D}</Project>
       <Name>Demo.Dependencies.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Models.Contracts\Demo.Models.Contracts.csproj">
+      <Project>{93C3D108-DEB9-4B96-B9C1-DBB281D3DD95}</Project>
+      <Name>Demo.Models.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Services.Contracts\Demo.Services.Contracts.csproj">
+      <Project>{FB47772E-44F7-422B-AB68-92E3D23A2CA6}</Project>
+      <Name>Demo.Services.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\Demo.Wpf.Presentation.Shared\Demo.Wpf.Presentation.Shared.csproj">
       <Project>{6E2F8FA8-DD22-40E5-901A-DD9617F222AE}</Project>

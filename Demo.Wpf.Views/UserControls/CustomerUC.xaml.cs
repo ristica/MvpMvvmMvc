@@ -1,22 +1,24 @@
-﻿using System;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using Demo.Wpf.Views.Contracts.UserControls;
 
 namespace Demo.Wpf.Views.UserControls
 {
-    /// <summary>
-    /// Interaction logic for CustomerView.xaml
-    /// </summary>
-    public partial class CustomerUC : UserControl, ICustomerView
+    // ReSharper disable once InconsistentNaming
+    public partial class CustomerUC : ICustomerView
     {
         public CustomerUC()
         {
             InitializeComponent();
         }
 
-        public void SetDataContext<T>(T viewModel)
+        public void SetDataContext<T>(T dc)
         {
-            throw new NotImplementedException();
+            this.DataContext = dc;
+        }
+
+        public StackPanel GetPanelControl()
+        {
+            return this.PanelControl;
         }
     }
 }

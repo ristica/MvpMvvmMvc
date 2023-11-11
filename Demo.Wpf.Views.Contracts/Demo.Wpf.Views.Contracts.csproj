@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
   </ItemGroup>
@@ -41,8 +42,8 @@
     <Compile Include="UserControls\ICustomerView.cs" />
     <Compile Include="UserControls\IDepartmentRowView.cs" />
     <Compile Include="UserControls\IDepartmentView.cs" />
-    <Compile Include="IHelpWindow.cs" />
-    <Compile Include="IMainWindow.cs" />
+    <Compile Include="Windows\IHelpWindow.cs" />
+    <Compile Include="Windows\IMainWindow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -5,7 +5,7 @@ namespace Demo.Wpf.ViewModels.Contracts.Base
 {
     public interface IBaseViewModelForWindow
     {
-        ICommand CloseCommand { get; set; }
+        ICommand CloseCommand { get; }
         IBaseWindow GetWindow();
     }
 }
