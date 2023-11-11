@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B6B646BA-834D-4F87-94B7-A04AA56B191F}</ProjectGuid>
+    <ProjectGuid>{4412CECB-C331-4BBB-9D3A-6F19F4EC759C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Demo.Bootstrapper.Asp</RootNamespace>
-    <AssemblyName>Demo.Bootstrapper.Asp</AssemblyName>
+    <RootNamespace>Demo.Asp.UI</RootNamespace>
+    <AssemblyName>Demo.Asp.UI</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,25 +31,56 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Mvc, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.3.0\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.3.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomDependencyResolver.cs" />
-    <Compile Include="DependencyInitializer.cs" />
+    <Compile Include="Base\BaseController.cs" />
+    <Compile Include="DepartmentController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CustomerController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Department\Index.cshtml" />
+    <Content Include="Views\Customer\Delete.cshtml" />
+    <Content Include="Views\Customer\List.cshtml" />
+    <Content Include="Views\Department\Delete.cshtml" />
+    <Content Include="Views\Department\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Demo.Asp.Presenter.Contracts\Demo.Asp.Presenter.Contracts.csproj">
       <Project>{C33A9BC9-7597-4C82-824B-5BA8BFD6298B}</Project>
       <Name>Demo.Asp.Presenter.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Demo.Asp.Presenter\Demo.Asp.Presenter.csproj">
-      <Project>{72A97162-5BFE-4A24-A5DD-A160B65A9350}</Project>
-      <Name>Demo.Asp.Presenter</Name>
     </ProjectReference>
     <ProjectReference Include="..\Demo.Dependencies.Contracts\Demo.Dependencies.Contracts.csproj">
       <Project>{CC16D317-4BDE-403B-B4EF-5482C710103D}</Project>
@@ -59,33 +90,6 @@
       <Project>{93C3D108-DEB9-4B96-B9C1-DBB281D3DD95}</Project>
       <Name>Demo.Models.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Demo.Models\Demo.Models.csproj">
-      <Project>{0455AF75-F03C-410F-8C3D-4462A6E0870E}</Project>
-      <Name>Demo.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Demo.Repository.Contracts\Demo.Repository.Contracts.csproj">
-      <Project>{763731E5-4572-42CD-A9B6-D38C2BCDC6E5}</Project>
-      <Name>Demo.Repository.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Demo.Repository\Demo.Repository.csproj">
-      <Project>{B4B7CD7F-B3EB-48BB-B8BC-6A6BBC4AE2BF}</Project>
-      <Name>Demo.Repository</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Demo.Services.Contracts\Demo.Services.Contracts.csproj">
-      <Project>{FB47772E-44F7-422B-AB68-92E3D23A2CA6}</Project>
-      <Name>Demo.Services.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Demo.Services\Demo.Services.csproj">
-      <Project>{7EE933B7-852E-4B3B-AA3B-2AE735882A70}</Project>
-      <Name>Demo.Services</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Demo.Wpf.Presentation.Shared\Demo.Wpf.Presentation.Shared.csproj">
-      <Project>{6E2F8FA8-DD22-40E5-901A-DD9617F222AE}</Project>
-      <Name>Demo.Wpf.Presentation.Shared</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

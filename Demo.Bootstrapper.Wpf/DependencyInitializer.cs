@@ -22,6 +22,7 @@ using Demo.Wpf.Views.Windows;
 
 namespace Demo.Bootstrapper.Wpf
 {
+    // ReSharper disable once ClassNeverInstantiated.Global
     public class DependencyInitializer
     {
         public static void Initialize(IDependencyContainer container)

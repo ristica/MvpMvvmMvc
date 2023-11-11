@@ -108,7 +108,7 @@
             this.Name = "FrmMain";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "WinForm MVP with IoC";
+            this.Text = "MVP with IoC";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMainOnClosing);
             this.Load += new System.EventHandler(this.FrmMainOnLoad);
             ((System.ComponentModel.ISupportInitialize)(this.pbInfo)).EndInit();

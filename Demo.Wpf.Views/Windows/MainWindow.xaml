@@ -6,7 +6,7 @@
                  xmlns:local="clr-namespace:Demo.Wpf"
                  xmlns:base="clr-namespace:Demo.Wpf.Views.Base"
                  mc:Ignorable="d"
-                 Title="MainWindow"
+                 Title="MVVM with IoC"
                  Height="450"
                  Width="800"
                  WindowStartupLocation="CenterScreen">
