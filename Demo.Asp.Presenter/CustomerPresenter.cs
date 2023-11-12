@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Demo.Asp.Presenter.Base;
 using Demo.Asp.Presenter.Contracts;
 using Demo.Dependencies.Contracts;

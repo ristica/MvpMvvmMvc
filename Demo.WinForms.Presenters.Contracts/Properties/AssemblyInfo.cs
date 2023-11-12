@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Demo.Bootstrapper.Asp")]
+[assembly: AssemblyTitle("Demo.WinForms.Presenters.Contracts")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Demo.Bootstrapper.Asp")]
+[assembly: AssemblyProduct("Demo.WinForms.Presenters.Contracts")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("b6b646ba-834d-4f87-94b7-a04aa56b191f")]
+[assembly: Guid("2933d51a-2acd-436b-a9f5-4532c37ee083")]
 
 // Version information for an assembly consists of the following four values:
 //

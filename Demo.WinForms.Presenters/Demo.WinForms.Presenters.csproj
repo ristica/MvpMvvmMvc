@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7F8118A7-64DC-4C13-BDFE-93593EF0481A}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>Demo.Starter.WinForms</RootNamespace>
-    <AssemblyName>Demo.Starter.WinForms</AssemblyName>
+    <ProjectGuid>{7644D273-9746-4A42-ABCA-10326F277406}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Demo.WinForms.Presenters</RootNamespace>
+    <AssemblyName>Demo.WinForms.Presenters</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,49 +31,42 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="ErrorMessageViewPresenter.cs" />
+    <Compile Include="HelpViewPresenter.cs" />
+    <Compile Include="MainViewPresenter.cs" />
+    <Compile Include="Base\Presenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
+    <Compile Include="UserControls\CustomerRowViewPresenter.cs" />
+    <Compile Include="UserControls\CustomerViewPresenter.cs" />
+    <Compile Include="UserControls\DepartmentRowViewPresenter.cs" />
+    <Compile Include="UserControls\DepartmentViewPresenter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Demo.Bootstrapper.WinForms\Demo.Bootstrapper.WinForms.csproj">
-      <Project>{8edac39b-7cb6-4ce8-bdf8-f16b762064e4}</Project>
-      <Name>Demo.Bootstrapper.WinForms</Name>
+    <ProjectReference Include="..\Demo.Common.Contracts\Demo.Common.Contracts.csproj">
+      <Project>{4B3582A8-C988-4472-B45E-8E819480EF5D}</Project>
+      <Name>Demo.Common.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Demo.Dependencies.Builder\Demo.Dependencies.Builder.csproj">
-      <Project>{854361C8-097F-43AF-8A79-F0480B55F447}</Project>
-      <Name>Demo.Dependencies.Builder</Name>
+    <ProjectReference Include="..\Demo.Common.Shared\Demo.Common.Shared.csproj">
+      <Project>{A5345B1B-130E-4AE9-BA0B-6E2D8B1EB483}</Project>
+      <Name>Demo.Common.Shared</Name>
     </ProjectReference>
     <ProjectReference Include="..\Demo.Dependencies.Contracts\Demo.Dependencies.Contracts.csproj">
       <Project>{CC16D317-4BDE-403B-B4EF-5482C710103D}</Project>
       <Name>Demo.Dependencies.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Models.Contracts\Demo.Models.Contracts.csproj">
+      <Project>{93C3D108-DEB9-4B96-B9C1-DBB281D3DD95}</Project>
+      <Name>Demo.Models.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Services.Contracts\Demo.Services.Contracts.csproj">
+      <Project>{FB47772E-44F7-422B-AB68-92E3D23A2CA6}</Project>
+      <Name>Demo.Services.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\Demo.WinForms.Presenters.Contracts\Demo.WinForms.Presenters.Contracts.csproj">
       <Project>{2933D51A-2ACD-436B-A9F5-4532C37EE083}</Project>
@@ -85,6 +76,11 @@
       <Project>{9B1D6967-A151-4425-8B9C-354438846DE3}</Project>
       <Name>Demo.WinForms.Views.Contracts</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

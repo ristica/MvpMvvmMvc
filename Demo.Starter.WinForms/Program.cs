@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using Demo.Bootstrapper.WinForms;
 using Demo.Dependencies.Builder;
-using Demo.Presenters.Contracts;
+using Demo.WinForms.Presenters.Contracts;
 
 namespace Demo.Starter.WinForms
 {

@@ -5,7 +5,6 @@ using Demo.Wpf.ViewModels.Contracts.UserControls;
 using Demo.Wpf.Views.Contracts.Base;
 using Demo.Wpf.Views.Contracts.UserControls;
 using Demo.Common.Contracts;
-using Demo.Models.Contracts.CustomerDomain;
 using Demo.Services.Contracts;
 using System.Windows.Input;
 using Demo.Common.Shared;
