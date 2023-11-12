@@ -8,6 +8,7 @@ using Demo.WinForms.Views.Contracts.UserControls;
 namespace Demo.WinForms.Views.UserControls
 {
     // ReSharper disable once InconsistentNaming
+    // ReSharper disable once ClassNeverInstantiated.Global
     public partial class CustomerRowUC : UserControl, ICustomerRowUC
     {
         #region FIELDS

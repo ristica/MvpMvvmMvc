@@ -35,7 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label100 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,23 +115,23 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Controls.Add(this.label100);
-            this.flowLayoutPanel1.Controls.Add(this.label3);
+            this.flowLayoutPanel1.Controls.Add(this.lblName);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(580, 28);
             this.flowLayoutPanel1.TabIndex = 12;
             // 
-            // label3
+            // lblName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(60, 8);
-            this.label3.Margin = new System.Windows.Forms.Padding(3, 8, 3, 0);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.label3.Size = new System.Drawing.Size(68, 13);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "ACME Ltd ";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(60, 8);
+            this.lblName.Margin = new System.Windows.Forms.Padding(3, 8, 3, 0);
+            this.lblName.Name = "lblName";
+            this.lblName.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.lblName.Size = new System.Drawing.Size(68, 13);
+            this.lblName.TabIndex = 12;
+            this.lblName.Text = "ACME Ltd ";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // DepartmentRowUC
             // 
@@ -162,6 +162,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label100;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblName;
     }
 }

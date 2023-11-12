@@ -12,7 +12,7 @@ using Demo.WinForms.Views.Contracts.UserControls;
 
 namespace Demo.WinForms.Presenters.UserControls
 {
-    public class DepartmentViewPresenter : Presenter, IDepartmentViewPresenter
+    public class DepartmentViewPresenter : Presenter, IDepartmentViewPresenter, IReceiver<EventArgs>
     {
         #region FIELDS
 
@@ -31,7 +31,8 @@ namespace Demo.WinForms.Presenters.UserControls
             this._uc = dependencyContainer.Resolve<IDepartmentUC>();
 
             this.SubscribeToUserInterfaceEvents();
-            this.SetDataContext();
+            this.SubscribeToNotifications();
+            this.LoadDepartments();
         }
 
         #endregion
@@ -39,6 +40,19 @@ namespace Demo.WinForms.Presenters.UserControls
         #region METHODS
 
         public IBaseUserControl GetUserControl() => this._uc;
+
+        public void Receive(object sender, EventArgs args, int messageId)
+        {
+            switch ((MessageType)messageId)
+            {
+                case MessageType.DepartmentDeletedMessage:
+                    this._uc.DataContext.Clear();
+                    this._uc.UpdateMe();
+                    this.LoadDepartments();
+                    this._uc.UpdateMe();
+                    break;
+            }
+        }
 
         public void Dispose()
         {
@@ -57,7 +71,7 @@ namespace Demo.WinForms.Presenters.UserControls
 
         #region HELPERS
 
-        protected override void SubscribeToUserInterfaceEvents()
+        protected sealed override void SubscribeToUserInterfaceEvents()
         {
             this._uc.DepartmentUserControlNewAddedEventRaised += (sender, args) =>
             {
@@ -74,18 +88,24 @@ namespace Demo.WinForms.Presenters.UserControls
             };
         }
 
-        private void SetDataContext()
+        private void SubscribeToNotifications()
+        {
+            this._messageNotificationsHelper.Subscribe(this, (int)MessageType.DepartmentDeletedMessage);
+        }
+
+        private void LoadDepartments()
         {
             var departments = this._service.GetAll();
             var rows = new List<IDepartmentRowUC>();
 
-            foreach (var c in departments)
+            foreach (var d in departments)
             {
                 var rowPresenter = DependencyContainer.Resolve<IDepartmentRowViewPresenter>();
 
-                // ...
+                if (rowPresenter.GetUserControl() is IDepartmentRowUC departmentRow) departmentRow.DataContext = d;
+                else continue;
 
-                rows.Add(rowPresenter.GetUserControl() as IDepartmentRowUC);
+                rows.Add(departmentRow);
             }
 
             this._uc.DataContext = rows;

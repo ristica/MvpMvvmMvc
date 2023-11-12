@@ -10,6 +10,7 @@ using Demo.WinForms.Views.Contracts.UserControls;
 
 namespace Demo.WinForms.Presenters.UserControls
 {
+    // ReSharper disable once ClassNeverInstantiated.Global
     public class CustomerRowViewPresenter : Presenter, ICustomerRowViewPresenter
     {
         #region FIELDS
